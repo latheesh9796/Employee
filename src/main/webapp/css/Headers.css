@@ -1,0 +1,53 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    font-family: 'Sofia';
+}
+
+li { 
+    float:left;
+    margin:auto;
+    text-align: center
+    background-color: white;
+    color:#09203f;
+    font-family: 'Sofia';
+    font-size: 30px;
+}
+li:hover {
+    float:left;
+    margin:auto;
+    background-color: #09203f;
+    color:white;
+    font-family: 'Sofia';
+    font-size: 30px;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-right: 2px solid black;
+}
+.tab.active{
+    float: left;
+    background-color: white;
+    color:#09203f;
+    font-family: 'Sofia';
+    font-size: 30px;
+}
+a .active {
+    float: left;
+    background-color: white;
+    color:#09203f;
+    font-family: 'Sofia';
+    font-size: 30px;
+}
+#right {
+    float: right;
+    border-left: 2px solid black;
+}
+

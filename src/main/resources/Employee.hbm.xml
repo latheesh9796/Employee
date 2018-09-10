@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "com.ideas2it.application.model.Employee" table = "Employees">
+      
+      <meta attribute = "class-description">
+         This class contains the employee detail. 
+      </meta>
+      <id name = "id" type = "int">
+         <column name= "employeeId" default = "0" />
+         <generator class="increment"/>
+      </id>
+
+      <property name = "dob" column = "DOB" type = "date"/>
+      <property name = "name" column = "name" type = "string"/>
+      <property name = "email" column = "email" type = "string"/>
+      <property name = "designation" column = "designation" type = "string"/>
+      <property name = "dateOfJoining" column = "dateOfJoining" type = "date"/>
+      <property name = "rating" column = "rating" type = "int"/>
+      <set name="projects" table="ProjectEmployee" lazy="false" fetch="select">
+      <key column="employeeId" />
+      <many-to-many class="com.ideas2it.application.model.Project" 
+                                                        column="projectId" />
+       </set>
+       <set name="addresses" fetch = "select" lazy = "false" cascade="all">
+            <key column = "employeeId"/>
+            <one-to-many class="com.ideas2it.application.model.Address"/>
+       </set>
+      <property name = "status" column = "status" type = "string"/>
+   </class>
+</hibernate-mapping>
+

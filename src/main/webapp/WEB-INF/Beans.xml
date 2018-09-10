@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+<bean id = "EmployeeController" class = "com.ideas2it.application.controller.EmployeeManagement">
+    <property name = "employeeService" ref = "EmployeeService">
+    </property>
+</bean>
+<bean id = "EmployeeService" class = "com.ideas2it.application.service.impl.EmployeeServiceImpl">
+    <property name = "employeeDAO" ref = "employeeDAO">
+    </property>
+</bean>
+
+<bean id = "employeeDAO" class = "com.ideas2it.application.dao.impl.EmployeeDAOImpl"/>
+
+<bean id = "ProjectController" class = "com.ideas2it.application.controller.ProjectManagement">
+    <property name = "projectService" ref = "ProjectService">
+    </property>
+</bean>
+<bean id = "ProjectService" class = "com.ideas2it.application.service.impl.ProjectServiceImpl">
+    <property name = "projectDAO" ref = "projectDAO">
+    </property> 
+    <property name = "employeeService" ref = "EmployeeService">
+    </property>
+</bean>
+<bean id = "projectDAO" class = "com.ideas2it.application.dao.impl.ProjectDAOImpl"/>
+
+<bean id = "ClientController" class = "com.ideas2it.application.controller.ClientManagement">
+    <property name = "ClientService" ref = "ClientService">
+    </property>
+</bean>
+<bean id = "ClientService" class = "com.ideas2it.application.service.impl.ClientServiceImpl">
+    <property name = "clientDAO" ref = "clientDAO">
+    </property> 
+    <property name = "projectService" ref = "ProjectService">
+    </property>
+</bean>
+<bean id = "clientDAO" class = "com.ideas2it.application.dao.impl.ClientDAOImpl"/>
+
+<bean id = "UserController" class = "com.ideas2it.application.controller.UserManagement">
+    <property name = "userService" ref = "userService">
+    </property>
+</bean>
+<bean id = "userService" class = "com.ideas2it.application.service.impl.UserServiceImpl">
+    <property name = "userDAO" ref = "userDAO">
+    </property>
+</bean>
+
+<bean id = "userDAO" class = "com.ideas2it.application.dao.impl.UserDAOImpl"/>
+
+</beans>

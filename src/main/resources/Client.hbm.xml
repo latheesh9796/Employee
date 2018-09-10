@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "com.ideas2it.application.model.Client" table = "Clients">
+      
+      <meta attribute = "class-description">
+         This class contains the client details. 
+      </meta>
+
+     <id name = "id" type = "int">
+         <column name= "clientId" default = "0" />
+         <generator class="increment"/>
+      </id>
+      
+      <property name = "name" column = "name" type = "string"/>
+      <property name = "description" column = "description" type = "string"/>
+      <property name = "status" column = "status" type = "string"/>
+       <set name="projects" fetch = "select" lazy = "false">
+            <key column = "clientId"/>
+            <one-to-many class="com.ideas2it.application.model.Project"/>
+       </set>
+       <set name="addresses" fetch = "select" lazy = "false" cascade="all">
+            <key column = "clientId"/>
+            <one-to-many class="com.ideas2it.application.model.Address"/>
+       </set>
+   </class>
+</hibernate-mapping>

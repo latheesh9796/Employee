@@ -1,0 +1,52 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background: linear-gradient(#09203f,#537895); 
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+label {
+    color: white;
+}
+#center {
+    color: white;
+    text-align: center;
+    font-family: 'Sofia';
+}
+.hr-theme-slash-2 {
+  display: flex;
+  }
+  .hr-line {
+    width: 100%;
+    position: relative;
+    margin: 15px;
+    border-bottom: 1px solid white;
+  }
+  .hr-icon {
+    position: relative;
+    top: 3px;
+    color: #ff0000;
+  }
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+.button5 {border-radius: 50%;}

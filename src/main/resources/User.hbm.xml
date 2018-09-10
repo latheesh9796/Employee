@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "com.ideas2it.application.model.User" table = "Users">
+      
+      <meta attribute = "class-description">
+         This class contains the Address detail. 
+      </meta>
+      <id name = "id" type = "int">
+         <column name= "id" default = "0" />
+         <generator class="increment"/>
+      </id>
+      <property name = "email" column = "email" type = "string" unique="true"/>
+      <property name = "password" column = "password" type = "string"/>
+   </class>
+</hibernate-mapping>
+
